@@ -1,0 +1,67 @@
+{
+    "main": {
+      "name": "Bhavya Goyal",
+      "bio": "I'm a sophomore at IIIT-K, pursuing my BTech in Computer Science Engeneering with an interest in [Pentesting, Competitive Programming]. I have done some Full-Stack work in web and app Devlopment.Looking forward to connect with people and learn new technologies.",
+      "contactmessage": "Get in touch with me.",
+      "email": "bhavyagoyal54@gmail.com",
+      "phone": "+91 7888762659",
+      "address": {
+        "street": "Ganpati Enclave",
+        "city": "Bathinda",
+        "state": "Punjab",
+        "zip": "151001"
+      },
+      "social": [
+        {
+          "name": "facebook",
+          "url": "https://www.facebook.com/profile.php?id=100008964584719"
+        },
+        {
+          "name": "linkedin",
+          "url": "https://www.linkedin.com/in/bhavya-goyal-832418203/"
+        },
+        {
+          "name": "instagram",
+          "url": "https://www.instagram.com/bhavya_g55/"
+        },
+        {
+          "name": "github",
+          "url": "https://github.com/bhavyag54"
+        }
+      ]
+    },
+    "portfolio": {
+      "projects": [
+        {
+          "title": "Valentina",
+          "dis": "Sociallizing App build for IIIT Kottayam students build using React Native(EXPO) and firebase with End-to-End encryted chat feature.",
+          "url":"https://github.com/bhavyag54/Valentina"
+        },
+        {
+          "title": "UPSIDA",
+          "dis": "A website developed during a Hackathon hosted by Uttar Pradesh government.",
+          "url":"https://github.com/bhavyag54/UPSIDA"
+        },
+        {
+          "title": "GFG Webhacks",
+          "dis": "A frontend developed during a Hackathon hosted by Geeks for Geeks.",
+          "url":"https://bhavyag54.github.io/gfg-webHacks-website/"
+        },
+        {
+          "title": "Tic-Tac-Toe",
+          "dis": "Simple Tic-Tac-Toe build using undefeatable MinMax algo.",
+          "url":"https://bhavyag54.github.io/Tic-Tac-Toe/"
+        },
+        {
+          "title": "CSES",
+          "dis": "Repository of codes of CSES solutions.",
+          "url":"https://github.com/bhavyag54/CSES"
+        },
+        {
+          "title": "Url Shortner",
+          "dis": "Simple url shorter build using python-django web framework.",
+          "url":"https://github.com/bhavyag54/url-shortner"
+        }
+      ]
+    }
+  }
