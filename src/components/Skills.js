@@ -1,4 +1,3 @@
-import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils'
 import React from 'react'
 import styled from 'styled-components'
 import SkillData from '../variables/skillData'
