@@ -89,7 +89,7 @@ const MainContainer = styled.div`
         width: 100vw;
         height: 100vh;
         backdrop-filter: blur(20px);
-        position: absolute;
+        position: fixed;
         z-index: 10;
         background: transparent;
         `
@@ -103,7 +103,7 @@ const MainContainer = styled.div`
 
 const Container = styled.div`
 
-    height: 90vh;
+    height: 100vh;
     background: var(--acsent);
     width: 300px;
     right: 0px;
