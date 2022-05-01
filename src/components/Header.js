@@ -173,7 +173,6 @@ const Nav = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background-color: aliceblue; */
     flex: 1;
 
     @media (min-width: 768px)
@@ -182,7 +181,7 @@ const Nav = styled.div`
         flex-direction: row;
         text-align: right;
         flex :1;
-        justify-content: space-around;
+        justify-content: center;
     }
 
 `

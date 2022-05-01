@@ -131,7 +131,7 @@ const Network = styled.a`
     color: white;
     transition: all 0.25s ease-in;
     cursor: pointer;
-    z-index: 10;
+    z-index: 9;
     &:hover{
         color: var(--text-color);
     }
