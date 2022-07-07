@@ -50,7 +50,6 @@ const Head = styled.div`
   color: white;
   z-index: 1;
   position: relative;
-  font-size: 15px;
 
   span{
     font-size: 20px;
@@ -67,7 +66,7 @@ const Name = styled.div`
 
   @media (min-width: 768px)
   {
-    font-size: 50px;
+    font-size: 60px;
   }
 `
 
@@ -102,7 +101,7 @@ const Text = styled.div`
   @media (min-width: 768px)
   {
     width: 60%;
-    font-size: 20px;
+    font-size: 24px;
     text-align: justify;
   }
 `

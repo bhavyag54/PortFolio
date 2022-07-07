@@ -66,7 +66,7 @@ function Header() {
                 </Nav>
 
                 <Resume>
-                    <a href="https://drive.google.com/file/d/1J1gmy2lDDFhDatPOE8S9fS34qNdm2yEl/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://drive.google.com/file/d/1kgebE0VyF5tVOV-f6oND7F8HNMTyRCvN/view?usp=sharing" target="_blank">Resume</a>
                 </Resume>
 
             </Container>

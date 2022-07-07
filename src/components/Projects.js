@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {IoFolderOpenOutline, IoExitOutline} from 'react-icons/io5'
+import {IoFolderOpenOutline, IoExitOutline, IoLogoGithub} from 'react-icons/io5'
 
 function Projects({resumeData}) {
 
@@ -28,7 +28,15 @@ function Projects({resumeData}) {
                             <Project key={proj.title}>
                                 <Header>
                                     <IoFolderOpenOutline size={40}/>
-                                    <a href={proj.url} target="_blank"><IoExitOutline size={40}/></a>
+                                    <Group>
+                                        {proj?.git_url?
+                                            <a href={proj.git_url} target="_blank"><IoLogoGithub size={30}/></a>
+                                        :""}
+                                        {proj?.url?
+                                            <a href={proj.url} target="_blank"><IoExitOutline size={40}/></a>:
+                                            ""
+                                        }
+                                    </Group>
                                 </Header>
 
                                 <Title>
@@ -107,6 +115,12 @@ const Header = styled.div`
             color: var(--text-color);
         }
     }
+`
+
+const Group = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
 `
 
 const Project = styled.div`
