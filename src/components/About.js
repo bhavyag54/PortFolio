@@ -82,6 +82,7 @@ const ContactBtn = styled.div`
     transition: all 0.25s ease;
     position: relative;
     left: 10px;
+    z-index: 100;
 
     &:hover{
         filter: brightness(80%);
