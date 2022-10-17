@@ -33,15 +33,20 @@
     "portfolio": {
       "projects": [
         {
-          "title": "Valentina",
-          "dis": "Sociallizing App build for IIIT Kottayam students build using React Native(EXPO) and firebase with End-to-End encryted chat feature.",
-          "git_url":"https://github.com/shashank1503-cipher/Valentina"
+          "title":"BigSy (Smart India Hackathon 2022 Winner)",
+          "dis": "A unified form of database software that can search text within any format of data/file such as jpeg, png, pdf, word, SQL,JSON, CSV, audio files. Build for Madhya Pradesh State Police under PS AT980.",
+          "git_url": "https://github.com/bhavyag54/SIH-Backend"
         },
         {
           "title": "Partners in crime",
           "dis": "Platform build to connect students belonging to same college to Particate in Hackathons hosted on various web sites.",
           "url": "https://partners-in-crime.vercel.app",
           "git_url": "https://github.com/bhavyag54/partners-in-crime"
+        },
+        {
+          "title": "Valentina",
+          "dis": "Sociallizing App build for IIIT Kottayam students build using React Native(EXPO) and firebase with End-to-End encryted chat feature.",
+          "git_url":"https://github.com/shashank1503-cipher/Valentina"
         },
         {
           "title": "UPSIDA",
