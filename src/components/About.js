@@ -3,17 +3,20 @@ import styled from 'styled-components'
 
 function About({resumeData}) {
 
-
+  // AOS.init()
 
   return (
     <Container className='about'>
 
-        <Head>Hello <span>👋</span>! I'm</Head>
-        <Name>Bhavya Goyal</Name>
+        {/* <div style="color:Tomato;">HHELLOO</div> */}
 
-        <Text>{resumeData?.bio}</Text>
-
-        <ContactBtn onClick={() => {
+        <Head data-aos='fade-right'>Hello <span>👋</span>! I'm</Head>
+        <Name data-aos='fade-left'>Bhavya Goyal</Name>
+        
+        <Text data-aos='fade-right'>{resumeData?.bio}</Text>
+        
+        <ContactBtn data-aos='fade-zoom-in' data-aos-easing="ease-in-back"
+     data-aos-delay="100" data-aos-duration="500" onClick={() => {
           document.getElementsByClassName('contact')[0].scrollIntoView(
             {
               behavior: "smooth", 

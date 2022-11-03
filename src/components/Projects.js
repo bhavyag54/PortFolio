@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {IoFolderOpenOutline, IoExitOutline, IoLogoGithub} from 'react-icons/io5'
+import "aos/dist/aos.css";
+import AOS from 'aos'
 
 function Projects({resumeData}) {
 
@@ -25,7 +27,7 @@ function Projects({resumeData}) {
                 {projects?
                     projects.map(proj => {
                         return (
-                            <Project key={proj.title}>
+                            <Project key={proj.title} data-aos="zoom-in-down">
                                 <Header>
                                     <IoFolderOpenOutline size={40}/>
                                     <Group>

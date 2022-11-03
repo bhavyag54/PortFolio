@@ -49,7 +49,8 @@ function Header() {
 
 
     return (
-        <MainContainer isOpen={open}>
+        <MainContainer data-aos="fade-zoom-in" data-aos-easing="ease-in-back"
+        data-aos-delay="100" data-aos-duration="500" isOpen={open}>
             <Mobutton onClick={() => setOpen(!open)}>
                 <MenuClose/>
             </Mobutton>

@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import "aos/dist/aos.css";
+import AOS from 'aos'
 
 function SideEmail() {
   return (
-    <Container>
+    <Container >
         
-        <Cont>
+        <Cont data-aos="fade-up" data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
             
             <Email><a href="mailto:bhavyagoyal54@gmail.com">Bhavyagoyal54@gmail.com</a></Email>
             

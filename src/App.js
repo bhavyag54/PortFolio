@@ -3,13 +3,18 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import SideEmail from "./components/SideEmail";
 import SideLinks from "./components/SideLinks";
-
+import AOS from 'aos'
 
 function App() {
 
   const [resumeData, setResumeData] = useState(null)
 
   useEffect(() => {
+
+    
+    AOS.init({
+    });
+    window.addEventListener("load", AOS.refresh);
 
     fetch("/resumeData.json")
     .then(res => res.json())
@@ -22,6 +27,9 @@ function App() {
   
   return (
     <div className="App">
+
+        
+
         <Header/>
         <SideEmail/>
         <Home resumeData={resumeData}/>

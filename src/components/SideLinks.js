@@ -27,7 +27,8 @@ function SideLinks({resumeData}) {
     return (
         <Container>
             
-        <Cont>
+        <Cont data-aos="fade-down" data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
             <Stroke/>
             
             {links?

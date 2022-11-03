@@ -1,13 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import SkillData from '../variables/skillData'
+import "aos/dist/aos.css";
+import AOS from 'aos'
 
 function Skills() {
 
     const SkillSets = () => SkillData.map(skill => {
     
         return (
-            <SkillSet key={skill.id}>
+            <SkillSet key={skill.id} data-aos="fade-right">
                 <Heading>{skill.heading}</Heading>
                 <Skillss>
                 {
@@ -70,13 +72,16 @@ const SkillSet = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
+    gap: 30px;
+    margin-bottom: 30px;
+
 `
 
 const Heading = styled.div`
 
-    font-size: 20px;
+    font-size: 22px;
+    font-weight:500;
+    color: rgb(200,200,200);
 
 `
 
