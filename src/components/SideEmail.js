@@ -7,7 +7,7 @@ function SideEmail() {
   return (
     <Container >
         
-        <Cont data-aos="fade-up" data-aos-easing="ease-out-cubic"
+        <Cont  data-aos="fade-up" data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
             
             <Email><a href="mailto:bhavyagoyal54@gmail.com">Bhavyagoyal54@gmail.com</a></Email>
@@ -31,7 +31,7 @@ const Container = styled.div`
     }
     position: fixed;
     z-index: 3;
-    bottom: 0px;
+    bottom: -10px;
     left: 50px;
     
 `
@@ -39,13 +39,17 @@ const Container = styled.div`
 const Cont = styled.div`
     position: absolute;
     bottom: 0px;
+    text-align: center;
+    align-items: center;
+
 `
 
 const Stroke = styled.div`
 
     position: relative;
-    width: 3px;
-    height: 200px;
+    width: 0.5vw;
+    max-width: 10px;
+    height: 40vh;
     border-radius: 10px;
     background-color:var(--text-color);
    
@@ -57,6 +61,7 @@ const Email = styled.div`
     position: relative;
     transform: rotateZ(-90deg);
     transform-origin: left;
+    margin-left: 0.2vw;
 
     a{
         color: white;
@@ -66,5 +71,6 @@ const Email = styled.div`
             color: var(--text-color);
 
         }
+        font-size: 1.2vw;
     }
 `

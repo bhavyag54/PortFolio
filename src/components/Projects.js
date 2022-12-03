@@ -21,7 +21,7 @@ function Projects({resumeData}) {
     return (
         <Container className='projects'>
             
-            <Heading>Some Noteworthy Projects</Heading>
+            <Heading data-aos="zoom-in-down">Some Noteworthy Projects</Heading>
 
             <Main>
                 {projects?
@@ -32,10 +32,10 @@ function Projects({resumeData}) {
                                     <IoFolderOpenOutline size={40}/>
                                     <Group>
                                         {proj?.git_url?
-                                            <a href={proj.git_url} target="_blank"><IoLogoGithub size={30}/></a>
+                                            <a href={proj.git_url} target="_blank"><IoLogoGithub/></a>
                                         :""}
                                         {proj?.url?
-                                            <a href={proj.url} target="_blank"><IoExitOutline size={40}/></a>:
+                                            <a href={proj.url} target="_blank"><IoExitOutline/></a>:
                                             ""
                                         }
                                     </Group>
@@ -78,7 +78,7 @@ const Container = styled.div`
 
 const Heading = styled.div`
 
-    font-size: 30px;
+    font-size: calc(16px + 2vw);
     font-weight: 600;
     letter-spacing: 1.5px;
     margin-bottom: 40px;
@@ -97,11 +97,13 @@ const Main = styled.div`
 
 const Disc = styled.div`
 
+    font-size: calc(12px + 0.5vw);
+
 `
 
 const Title = styled.div`
     transition: all 0.2s ease;
-    font-size: 20px;
+    font-size: calc(10px + 1vw);
     font-weight: 500;
 `
 
@@ -109,6 +111,7 @@ const Header = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     a{
         text-decoration: none;
         color: white;
@@ -122,7 +125,10 @@ const Header = styled.div`
 const Group = styled.div`
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1vw;
+    font-size: calc(20px + 1vw);
+    // background: red;
+    justify-content: center;
 `
 
 const Project = styled.div`
@@ -133,6 +139,11 @@ const Project = styled.div`
     border: 1px solid white;
     padding: 10px 20px;
     min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
 
     @media (min-width: 768px)
     {

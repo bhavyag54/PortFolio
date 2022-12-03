@@ -3,19 +3,11 @@ import styled from 'styled-components'
 import '../CSSs/MenuClose.css'
 
 
-const MenuBtt = () => {
-    const menu = document.getElementsByClassName('menu')
-    menu[0].classList.toggle('opened');
-    menu[0].setAttribute('aria-expanded', menu[0].classList.contains('opened'))
-}
-
 const MenuClose = () => {
 
     return (
         <>
-            <button className="menu" onClick={() => {
-                MenuBtt()
-            }} 
+            <button className="menu" 
               aria-label="Main Menu">
               
               <svg width="100" height="100" viewBox="0 0 100 100">
@@ -34,13 +26,41 @@ function Header() {
       
     const [open, setOpen] = useState(false)
 
+    useEffect(() => {
+
+        const menu = document.getElementsByClassName('menu')
+        if(open)
+        {
+            menu[0].classList.add('opened');
+            menu[0].setAttribute('aria-expanded', menu[0].classList.contains('opened'))
+        }
+        else
+        {
+            menu[0].classList.remove('opened');
+        }
+
+
+    }, [open])
+
+    useEffect(() => {
+
+        window.addEventListener('resize', (w) => {
+            console.log(w.target.innerWidth)
+
+            if(w.target.innerWidth > 768)
+            {
+                setOpen(false);
+            }
+        })
+        
+    }, [])
+
     const NavItem = (props) => {
         return (
             <NavCont onClick={() => {
                 const s = document.getElementsByClassName(props.text.toLowerCase())[0]
                 s.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
                 setOpen(false)
-                MenuBtt()
             }}>
                 {props.text}
             </NavCont>
@@ -80,7 +100,7 @@ export default Header
 
 const MainContainer = styled.div`
     position: fixed;
-    height: 60px;
+    height: 10vh;
     width: 100vw;
     background-color:var(--acsent);
     z-index: 10;
@@ -121,7 +141,7 @@ const Container = styled.div`
     
     @media (min-width: 768px){
         width: 100vw;
-        height: 60px;
+        height: 100%;
         background: var(--acsent);
         transform: none;
         transition: none;
@@ -146,6 +166,7 @@ const Name = styled.div`
 
     @media (min-width: 768px) {
         display: flex;
+        font-size: 2.5vw;
     }
     
 `
@@ -154,7 +175,7 @@ const Logo = styled.div`
     z-index: 11;
     position: absolute;
     color: white;
-    font-size: 20px;
+    font-size: 3vw;
     top: 16px;
     left: 20px;
     transition: all 0.25s ease;
@@ -198,6 +219,7 @@ const Resume = styled.div`
         padding: 10px 20px;
         background-color: var(--text-color);
         border: 1px solid var(--text-color);
+        font-size: calc(10px + 1vw);
         
         :after{
             position: absolute;
@@ -222,17 +244,26 @@ const Resume = styled.div`
     }
 
     @media (min-width: 768px) {
-        margin-right: 100px;
+        margin-right: 60px;
+        
+        a{
+            font-size: calc(8px + 1vw);
+        }
     }
 `
 
 const NavCont = styled.div`
     color: white;
-    font-size: 18px;
+    font-size: calc(10px + 1vw);
     cursor: pointer;
     padding: 10px 20px;
 
     transition: all 0.25s ease;
+
+    @media(min-width: 768px)
+    {
+        font-size: calc(8px + 1vw);
+    }
 
     &:hover{
         color: var(--text-color);

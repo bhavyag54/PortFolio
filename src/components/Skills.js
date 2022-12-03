@@ -30,7 +30,7 @@ function Skills() {
     return (
     <Container className="skills">
         
-        <SkillHeader>Skills</SkillHeader>
+        <SkillHeader data-aos="zoom-in-down">Skills</SkillHeader>
 
         <SkillSets/>
 

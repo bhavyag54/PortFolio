@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {IoLogoLinkedin, IoLogoInstagram, IoLogoGithub, IoMailOpen} from 'react-icons/io5'
+import "aos/dist/aos.css";
+import AOS from 'aos'
 
 function Contact({resumeData}) {
 
@@ -27,16 +29,16 @@ function Contact({resumeData}) {
   return (
     <Container className='contact'>
         
-        <Header>Get In Touch</Header>
+        <Header data-aos="zoom-in-down">Get In Touch</Header>
         
-        <Text>I am actively looking for internship 
+        <Text data-aos="zoom-in-up">I am actively looking for internship 
           opportunities. Feel free to drop a
            mail in my Inbox.</Text>
 
-        <MailButton><a href="mailto:bhavyagoyal54@gmail.com">Say Hello</a></MailButton>
+        <MailButton data-aos="fade-in"><a href="mailto:bhavyagoyal54@gmail.com">Say Hello</a></MailButton>
 
         {links?
-            <Links>
+            <Links >
                 <Link url={links[1].url} icon={<IoLogoLinkedin size={22}/>}/>
                 <Link url={links[2].url} icon={<IoLogoInstagram size={22}/>}/>
                 <Link url={links[3].url} icon={<IoLogoGithub size={22}/>}/>
@@ -64,6 +66,7 @@ const Container = styled.div`
     align-items: center;
     padding: 150px 0px;
 
+    justify-content: center;
 
     @media (min-width: 768px)
     {

@@ -28,12 +28,12 @@ const Container = styled.div`
     width: 100vw;
     height: 100%;
     padding: 0px 30px;
-    padding-top: 50px;
+    padding-top: 0px;
 
-    @media (min-width: 768px)
-    {
-      padding: 0px 100px;
-    }
+    // @media (min-width: 768px)
+    // {
+    //   padding: 0px 40px;
+    // }
 `
 
 // const Content = styled.div`

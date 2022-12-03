@@ -39,10 +39,12 @@ const Container = styled.div`
     top:0px;
     padding-top: 60px;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: 768px)
     {
-      padding-top: 100px;
+      padding-top: 0px;
     }
 
 `
@@ -54,8 +56,15 @@ const Head = styled.div`
   z-index: 1;
   position: relative;
 
+  
+  @media (min-width: 768px)
+  {
+    // margin-left: 3px;
+    font-size: 1.7vw;
+  }
+
   span{
-    font-size: 20px;
+    font-size: calc(15px + 1vw);
   }
 
 `
@@ -69,23 +78,30 @@ const Name = styled.div`
 
   @media (min-width: 768px)
   {
-    font-size: 60px;
+    font-size: 4vw;
   }
 `
 
 const ContactBtn = styled.div`
     
     color: white;
-    max-width: 200px;
+    width: 18vw;
+    min-width: 200px;
     padding: 10px 20px;
     text-align: center;
     background-color: var(--text-color);
-    margin-top: 50px;
+    margin-top: 30px;
     cursor: pointer;
     transition: all 0.25s ease;
     position: relative;
     left: 10px;
-    z-index: 2;
+    z-index: 3;
+    font-size: 16px;
+
+    @media (min-width: 768px)
+    {
+      font-size: 1.4vw;
+    }
 
     &:hover{
         filter: brightness(80%);
@@ -99,13 +115,13 @@ const Text = styled.div`
   font-size: 20px;
   position: relative;
   margin-top: 10px;
-  text-align: left;
+  text-align: center;
   width: 100%;
 
   @media (min-width: 768px)
   {
     width: 60%;
-    font-size: 24px;
-    text-align: justify;
+    font-size: 2vw;
+    // margin-left: 3px;
   }
 `

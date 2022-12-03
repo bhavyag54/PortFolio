@@ -29,14 +29,15 @@ function SideLinks({resumeData}) {
             
         <Cont data-aos="fade-down" data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
+     {/* <Cont> */}
             <Stroke/>
             
             {links?
             <Links>
-                <Link url={links[1].url} icon={<IoLogoLinkedin size={20}/>}/>
-                <Link url={links[2].url} icon={<IoLogoInstagram size={20}/>}/>
-                <Link url={links[3].url} icon={<IoLogoGithub size={20}/>}/>
-                <Link url="mailto:bhavyagoyal54@gmail.com" icon={<IoMailOpen size={22}/>}/>
+                <Link url={links[1].url} icon={<IoLogoLinkedin/>}/>
+                <Link url={links[2].url} icon={<IoLogoInstagram/>}/>
+                <Link url={links[3].url} icon={<IoLogoGithub/>}/>
+                <Link url="mailto:bhavyagoyal54@gmail.com" icon={<IoMailOpen/>}/>
             </Links>
             :
             <></>
@@ -71,8 +72,9 @@ const Cont = styled.div`
 const Stroke = styled.div`
 
     position: relative;
-    width: 3px;
-    height: 300px;
+    width: 0.5vw;
+    max-width: 10px;
+    height: 50vh;
     border-radius: 10px;
     background-color:var(--text-color);
    
@@ -83,11 +85,11 @@ const Network = styled.a`
     color: white;
     transition: all 0.25s ease-in;
     cursor: pointer;
-    font-size: 10px;
     z-index: 10;
     &:hover{
         color: var(--text-color);
     }
+    font-size: 1.75vw;
 `
 
 const Links = styled.div`
@@ -98,4 +100,6 @@ const Links = styled.div`
     gap: 10px;
     margin-top: 10px;
     right: 7px;
+    
+    // margin-left: 0.2vw;
 `
