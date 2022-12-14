@@ -65,6 +65,7 @@ const SkillHeader = styled.div`
     font-weight: 600;
     letter-spacing: 1.5px;
     margin-bottom: 40px;
+    text-align: center;
 `
 
 const SkillSet = styled.div`
@@ -82,6 +83,7 @@ const Heading = styled.div`
     font-size: 22px;
     font-weight:500;
     color: rgb(200,200,200);
+    text-align: center;
 
 `
 
@@ -109,6 +111,8 @@ const Skill = styled.div`
     img{
         width: 8vw;
         height: 8vw;
+        min-width: 60px;
+        min-height: 60px;
     }
 
     display: flex;

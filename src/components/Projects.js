@@ -72,6 +72,7 @@ const Container = styled.div`
     position: relative;
     align-items: center;
     color: white;
+    justify-content: center;
     padding-top: 60px;
 
 `
@@ -82,6 +83,7 @@ const Heading = styled.div`
     font-weight: 600;
     letter-spacing: 1.5px;
     margin-bottom: 40px;
+    text-align: center;
 
 `
 
@@ -103,7 +105,7 @@ const Disc = styled.div`
 
 const Title = styled.div`
     transition: all 0.2s ease;
-    font-size: calc(10px + 1vw);
+    font-size: calc(14px + 1vw);
     font-weight: 500;
 `
 
@@ -125,8 +127,8 @@ const Header = styled.div`
 const Group = styled.div`
     display: flex;
     align-items: center;
-    gap: 1vw;
-    font-size: calc(20px + 1vw);
+    gap: 10px;
+    font-size: calc(24px + 2vw);
     // background: red;
     justify-content: center;
 `
