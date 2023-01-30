@@ -92,7 +92,7 @@ function Header() {
                 </Nav>
 
                 <Resume>
-                    <a href="https://drive.google.com/file/d/1eFMdIjSJtIVJ7pO8thN83bSUhO8aXkhM/view" target="_blank">Resume</a>
+                    <a href="https://drive.google.com/file/d/1bDpTEYE-Hy-JdCOJgYxfcnm5bmLuEnLz/view?usp=share_link" target="_blank">Resume</a>
                 </Resume>
 
             </Container>
