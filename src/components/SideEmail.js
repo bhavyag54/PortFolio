@@ -24,14 +24,14 @@ export default SideEmail
 const Container = styled.div`
 
     z-index: 0;
-
+   
     @media (max-width: 768px)
     {
         display: none;
     }
     position: fixed;
     z-index: 3;
-    bottom: -10px;
+    bottom: 40vh;
     left: 50px;
     
 `
@@ -39,17 +39,18 @@ const Container = styled.div`
 const Cont = styled.div`
     position: absolute;
     bottom: 0px;
-    text-align: center;
     align-items: center;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const Stroke = styled.div`
 
-    position: relative;
-    width: 0.5vw;
+    position: absolute;
+    width: 0.2vw;
     max-width: 10px;
-    height: 40vh;
+    height: 35vh;
     border-radius: 10px;
     background-color:var(--text-color);
    
@@ -58,19 +59,27 @@ const Stroke = styled.div`
 
 const Email = styled.div`
     color: white;
-    position: relative;
+    position: absolute;
     transform: rotateZ(-90deg);
-    transform-origin: left;
-    margin-left: 0.2vw;
+    transform-origin: top;
+    transition: all 0.2s ease;
+    margin-left: 2px;
 
     a{
         color: white;
         text-decoration: none;
         transition: all 0.2s ease;
         &:hover{
-            color: var(--text-color);
-
+            color: var(--text-hover);
+            font-weight: 500;
         }
-        font-size: 1.2vw;
+        font-weight: 500;
+        font-size: 1.1vw;
+    }
+
+    &:hover{
+        /* font-weight: 600; */
+        /* font-size: 1vw; */
+        transform:rotateZ(-90deg) translateX(2px);
     }
 `

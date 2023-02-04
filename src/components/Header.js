@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import '../CSSs/MenuClose.css'
+import { useScrollDirection } from '../hooks'
+
 
 
 const MenuClose = () => {
@@ -25,6 +27,21 @@ const MenuClose = () => {
 function Header() {
       
     const [open, setOpen] = useState(false)
+    const scrollDirection = useScrollDirection('down');
+    const [scrolledToTop, setScrolledToTop] = useState(true);
+
+    const handleScroll = () => {
+        setScrolledToTop(window.pageYOffset < 50);
+      };
+
+
+    const handleResize = (w) => {
+        if(w.target.innerWidth > 768)
+        {
+            setOpen(false);
+        }
+    }
+
 
     useEffect(() => {
 
@@ -44,14 +61,14 @@ function Header() {
 
     useEffect(() => {
 
-        window.addEventListener('resize', (w) => {
-            console.log(w.target.innerWidth)
+        window.addEventListener('resize', handleResize)
 
-            if(w.target.innerWidth > 768)
-            {
-                setOpen(false);
-            }
-        })
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', handleResize)
+        }
         
     }, [])
 
@@ -73,7 +90,7 @@ function Header() {
 
 
     return (
-        <MainContainer isOpen={open}>
+        <MainContainer isOpen={open} scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
             <HeadContainer>
             <Logo isOpen={open}>Bhavya Goyal</Logo>
             <Mobutton isOpen={open} onClick={() => setOpen(!open)}>
@@ -92,7 +109,7 @@ function Header() {
                 </Nav>
 
                 <Resume>
-                    <a href="https://drive.google.com/file/d/1eFMdIjSJtIVJ7pO8thN83bSUhO8aXkhM/view?usp=sharing" target="_blank">Resume</a>
+                    <a href="https://drive.google.com/file/d/1bDpTEYE-Hy-JdCOJgYxfcnm5bmLuEnLz/view?usp=share_link" target="_blank">Resume</a>
                 </Resume>
 
             </Container>
@@ -109,9 +126,11 @@ const MainContainer = styled.div`
     height: 10vh;
     width: 100vw;
     background-color:var(--acsent);
+    transition: all 0.3s ease-in-out;
+
     z-index: 10;
     /* border-bottom: 10px solid white; */
-    ${props => props.isOpen?`
+    ${props => props.isOpen?css`
         width: 100vw;
         height: 100vh;
         backdrop-filter: blur(20px);
@@ -123,6 +142,29 @@ const MainContainer = styled.div`
 
         :
         ""
+    }
+
+    @media (prefers-reduced-motion: no-preference){
+        
+        ${props => !props.isOpen &&
+            props.scrollDirection === 'up' && !props.scrollToTop &&
+            css`
+                height: 10vh;
+                transform: translateY(0px);
+                /* background-color: rgba(10, 25, 47, 0.85); */
+                box-shadow: 0 10px 30px -10px var(--navy-shadow);
+            `
+        }
+
+
+        ${props => !props.isOpen &&
+            props.scrollDirection === 'down' &&
+            !props.scrolledToTop &&
+            css`
+                height: 10vh;
+                transform: translateY(-10vh);
+                box-shadow: 0 10px 30px -10px var(--navy-shadow);
+            `};
     }
 
 `
@@ -194,7 +236,7 @@ const Name = styled.div`
     }
 
     &:hover{
-        color: var(--text-color);
+        color: var(--text-hover);
     }
     
 `
@@ -207,7 +249,7 @@ const Logo = styled.div`
     transition: all 0.25s ease;
 
     &:hover{
-        color: var(--text-color);
+        color: var(--text-hover);
     }
 
     @media (min-width: 768px)
@@ -224,7 +266,7 @@ const Nav = styled.div`
     justify-content: center;
     position: relative;
     width: 100%;
-    flex: 1;
+    flex: 2;
     gap: 5px;
 
     @media (min-width: 768px)
@@ -240,9 +282,10 @@ const Nav = styled.div`
 
 const Resume = styled.div`
    
-   position: relative;
+    position: relative;
     z-index: 1;
     margin-right: 0px;
+    margin-bottom: 50px;
 
     a{
         text-decoration: none;
@@ -251,6 +294,7 @@ const Resume = styled.div`
         background-color: var(--text-color);
         border: 1px solid var(--text-color);
         font-size: calc(14px + 1vw);
+        font-weight: 600;
         
         :after{
             position: absolute;
@@ -276,14 +320,14 @@ const Resume = styled.div`
 
     @media (min-width: 768px) {
         margin-right: 60px;
-        
+        margin-bottom: 0px;
         a{
             font-size: calc(6px + 1vw);
         }
     }
 `
 const Image = styled.div`
-    background-image: url('/stroke.png');
+    /* background-image: url('/stroke.png'); */
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -301,7 +345,9 @@ const Image = styled.div`
 
 const NavCont = styled.div`
     color: rgba(0,0,0,1);
-    font-size: calc(16px + 1vw);
+    color: rgba(255,255,255,1);
+    font-weight: 500;
+    font-size: calc(10px + 1vw);
     cursor: pointer;
     position: relative;
     width: 100%;
@@ -319,14 +365,14 @@ const NavCont = styled.div`
 
     @media(min-width: 768px)
     {
-        font-size: calc(8px + 1vw);
+        font-size: calc(6px + 1vw);
         border-bottom: none;
         width: 100%;
         color: white;
     }
 
     &:hover{
-        color: var(--text-color);
+        color: var(--text-hover);
     }
 `
 

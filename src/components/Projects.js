@@ -3,33 +3,48 @@ import styled from 'styled-components'
 import {IoFolderOpenOutline, IoExitOutline, IoLogoGithub} from 'react-icons/io5'
 import "aos/dist/aos.css";
 import AOS from 'aos'
+import Featured from './Featured';
 
 function Projects({resumeData}) {
 
     const [projects, setProjects] = useState(null)
 
-    
     useEffect(() => {
 
         if(resumeData !== null)
         setProjects(resumeData.portfolio.projects)
     }, [resumeData, projects])
 
+    const [isMobile, setIsMobile] = useState(window.matchMedia('(min-width: 1000px)').matches)
+
+    useEffect(() => {
+
+        window.addEventListener('resize', () => setIsMobile(window.matchMedia('(min-width: 768px)').matches))
+    }, [])
 
 
 
     return (
         <Container className='projects'>
-            
-            <Heading data-aos="zoom-in-down">Some Noteworthy Projects</Heading>
+
+            {isMobile?
+            <Featured projects={projects}/>:""
+            }
+            <Heading data-aos="zoom-in-down">{isMobile?"Other":"Some"} Noteworthy Projects</Heading>
 
             <Main>
                 {projects?
                     projects.map(proj => {
+
+                        if(proj.bg && isMobile)
+                            return
+
                         return (
                             <Project key={proj.title} data-aos="zoom-in-down">
                                 <Header>
-                                    <IoFolderOpenOutline size={40}/>
+                                    <Icon>
+                                        <IoFolderOpenOutline size={30}/>
+                                    </Icon>
                                     <Group>
                                         {proj?.git_url?
                                             <a href={proj.git_url} target="_blank"><IoLogoGithub/></a>
@@ -40,14 +55,25 @@ function Projects({resumeData}) {
                                         }
                                     </Group>
                                 </Header>
+                                
+                                <div>
 
                                 <Title>
-                                    {proj.title}
+                                    {proj.title} <span>{proj.tag}</span>
                                 </Title>
 
                                 <Disc>
                                     {proj.dis}
                                 </Disc>
+                                </div>
+
+                                <Build>{
+                                        proj.Build.split(',').map(b => {
+                                            return <BuildItem>
+                                                {b}
+                                            </BuildItem>
+                                        })
+                                    }</Build>
 
                             </Project>
                         )
@@ -77,6 +103,11 @@ const Container = styled.div`
 
 `
 
+
+
+
+
+
 const Heading = styled.div`
 
     font-size: calc(16px + 2vw);
@@ -95,18 +126,29 @@ const Main = styled.div`
     row-gap: 20px;
     position: relative;
     justify-content: center;
+    width: 100%;
+
+    @media (min-width: 768px) {
+        width: 90%;
+    }
 `
 
 const Disc = styled.div`
 
-    font-size: calc(12px + 0.5vw);
+    font-size: calc(8px + 0.5vw);
+    margin-top: 5px;
 
 `
 
 const Title = styled.div`
     transition: all 0.2s ease;
-    font-size: calc(14px + 1vw);
+    font-size: calc(10px + 1vw);
     font-weight: 500;
+
+    span{
+        font-size: calc(6px + 1vw);
+        color: var(--acsent2);
+    }
 `
 
 const Header = styled.div`
@@ -128,28 +170,62 @@ const Group = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: calc(24px + 2vw);
+    font-size: calc(10px + 1.5vw);
     // background: red;
     justify-content: center;
 `
 
+const Icon = styled.div`
+
+    color: var(--text-color);
+
+`
+
+const Build = styled.div`
+
+    display: flex;
+    margin-top: auto;
+
+    bottom: 0px;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    /* align-items: center; */
+
+
+`
+
+const BuildItem = styled.div`
+
+    font-size:calc(8px + 0.5vw);
+    /* background: var(--acsent); */
+    padding: 2px;
+    color: var(--acsent2);
+    /* display: inline-block; */
+    /* background-color: aliceblue; */
+`
+
 const Project = styled.div`
     position: relative;
-    width: 90%;
+    width: 100%;
     color: white;
     transition: all 0.2s ease;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     padding: 10px 20px;
     min-height: 100px;
 
     display: flex;
     flex-direction: column;
+    background-color: var(--pj-back);
+    border-radius: 5px;
+
 
     gap: 10px;
 
     @media (min-width: 768px)
     {
-        width: 45%;
+        width: 30%;
     }
 
     &:hover{
@@ -157,8 +233,12 @@ const Project = styled.div`
             color: var(--text-color);
         }
 
+
+
+        
+
         transform: translateY(-10px);
-        border-color: var(--text-color);
+        /* border-color: var(--text-color); */
     }
 
 `

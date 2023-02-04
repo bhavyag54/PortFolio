@@ -60,21 +60,25 @@ const Container = styled.div`
     }
     position: fixed;
     background-color: blue;
-    top: 0px;
+    top: 15vh;
     right: 50px;
 `
 
 const Cont = styled.div`
     position: absolute;
     top: 0px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 
 const Stroke = styled.div`
 
-    position: relative;
-    width: 0.5vw;
+    position: absolute;
+    width: 0.2vw;
     max-width: 10px;
-    height: 50vh;
+    height: 35vh;
     border-radius: 10px;
     background-color:var(--text-color);
    
@@ -83,22 +87,24 @@ const Stroke = styled.div`
 
 const Network = styled.a`
     color: white;
-    transition: all 0.25s ease-in;
+    transition: all 0.20s ease-in;
     cursor: pointer;
     z-index: 10;
     &:hover{
-        color: var(--text-color);
+
+        transform:translateX(-3px);
+        color: var(--text-hover);
     }
-    font-size: 1.75vw;
+    font-size: 1.4vw;
 `
 
 const Links = styled.div`
     color: white;
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 25vh;
     right: 7px;
     
     // margin-left: 0.2vw;

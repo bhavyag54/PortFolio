@@ -43,8 +43,53 @@ code{
   }
 }
 
-:root {
+@keyframes hand {
+  0%{
+    transform: rotateZ(-10deg);
+  }
+
+  25%{
+    transform: rotateZ(10deg);
+  }
+
+  75%{
+    transform: rotateZ(-10deg);
+  }
+
+  100%{
+    transform: rotateZ(0deg);
+  }
+}
+
+/* :root {
   --text-color: rgb(32, 177, 169);
   --acsent: rgb(10,10,10);
   --name-color: rgb(200, 200, 200);
+  --text-hover: rgb(83, 235, 227);
+} */
+
+/* --text-color: rgb(32, 177, 169); */
+
+/* :root {
+  --text-color: rgb(202, 135, 27);
+  /* --acsent: rgb(10,10,10);
+  --name-color: rgb(200, 200, 200);
+  --text-hover: rgb(224, 155, 42);
+  --acsent2: rgb(200,200,200);
+  --bg-green: #009076;
+  --pj-back: rgb(20,20,20); */
+/* } */
+
+
+:root{
+
+  /* --text-color: rgb(202, 135, 27); */
+  --text-color: #009076;
+  --acsent: rgb(10,10,10);
+  --name-color: rgb(200, 200, 200);
+  --text-hover: #00e3b9;
+  --acsent2: rgb(200,200,200);
+  --bg-green: #009076;
+  --pj-back: rgb(20,20,20);
+
 }

@@ -33,48 +33,61 @@
     "portfolio": {
       "projects": [
         {
-          "title":"BigSy (Smart India Hackathon 2022 Winner)",
-          "dis": "A unified form of database software that can search text within any format of data/file such as jpeg, png, pdf, word, SQL,JSON, CSV, audio files. Build for Madhya Pradesh State Police under PS AT980.",
-          "git_url": "https://github.com/bhavyag54/SIH-Backend"
+          "title":"BigSy",
+          "tag":"(SIH 2022 Winner)",
+          "dis": "A unified form of database software that can search text within any format of data/file such as jpeg, png, pdf, word, SQL,JSON, CSV, audio files. Build for Madhya Pradesh State Police under PS AT980. Elastic search was used to quickly query large amounts of data, taking about 200ms(approx 16 million documents).",
+          "git_url": "https://github.com/bhavyag54/SIH-Backend",
+          "Build": "ReactJs, Elastic Search, GCP, FastAPI",
+          "bg":"sih.png",
+          "id": 1
         },
         {
           "title": "Partners in crime",
-          "dis": "Platform build to connect students belonging to same college to Particate in Hackathons hosted on various web sites.",
+          "dis": "Platform build to connect students belonging to same college to Particate in Hackathons hosted on various web sites. In-app chat support, List of all hackathons posted on various platforms like MLH DEV-POST and DEVFOLIO in one place, Broad and Efficient Search Algorithm.",
           "url": "https://partners-in-crime.vercel.app",
-          "git_url": "https://github.com/bhavyag54/partners-in-crime"
+          "git_url": "https://github.com/bhavyag54/partners-in-crime",
+          "bg":"pic.png",
+          "Build": "ReactJs, MongoDB, Firebase, FastAPI",
+          "id": 2
         },
         {
           "title": "Valentina",
           "dis": "Sociallizing App build for IIIT Kottayam students build using React Native(EXPO) and firebase with End-to-End encryted chat feature.",
-          "git_url":"https://github.com/shashank1503-cipher/Valentina"
+          "git_url":"https://github.com/shashank1503-cipher/Valentina",
+          "Build": "React Native, Firebase"
         },
         {
           "title": "UPSIDA",
           "dis": "A website developed during a Hackathon hosted by Uttar Pradesh government.",
           "url": "https://bhavyag54.github.io/UPSIDA/",
-          "git_url":"https://github.com/bhavyag54/UPSIDA"
+          "git_url":"https://github.com/bhavyag54/UPSIDA",
+          "Build": "HTML, CSS, Javascript"
         },
         {
           "title": "E-commerce API",
-          "dis": "Basic E-commerce API build using NodeJs-Express",
-          "git_url":"https://github.com/bhavyag54/Rest-ecommerce-api"
+          "dis": "E-commerce API build using NodeJs-Express",
+          "git_url":"https://github.com/bhavyag54/Rest-ecommerce-api",
+          "Build": "NodeJs, Express, MongoDB"
         },
         {
           "title": "GFG Webhacks",
           "dis": "A frontend developed during a Hackathon hosted by Geeks for Geeks.",
           "url": "https://bhavyag54.github.io/gfg-webHacks-website/",
-          "git_url":"https://bhavyag54.github.io/gfg-webHacks-website/"
+          "git_url":"https://bhavyag54.github.io/gfg-webHacks-website/",
+          "Build": "HTML, SCSS, Javascript"
         },
         {
           "title": "Tic-Tac-Toe",
           "dis": "Tic-Tac-Toe game build using the undefeatable MinMax algo.",
           "url": "https://bhavyag54.github.io/Tic-Tac-Toe/",
-          "git_url":"https://github.com/bhavyag54/Tic-Tac-Toe"
+          "git_url":"https://github.com/bhavyag54/Tic-Tac-Toe",
+          "Build": "HTML, SCSS, Javascript"
         },
         {
           "title": "Url Shortner",
           "dis": "url shorter build using python-django web framework.",
-          "git_url":"https://github.com/bhavyag54/url-shortner"
+          "git_url":"https://github.com/bhavyag54/url-shortner",
+          "Build": "Python, Django, Postgresql"
         }
       ]
     }

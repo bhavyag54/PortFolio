@@ -10,7 +10,7 @@ function About({resumeData}) {
 
         {/* <div style="color:Tomato;">HHELLOO</div> */}
 
-        <Head data-aos='fade-right'>Hello <span>👋</span>! I'm</Head>
+        <Head data-aos='fade-right'>Hello <HelloSpan>👋</HelloSpan>! I'm</Head>
         <Name data-aos='fade-left'>Bhavya Goyal</Name>
         
         <Text data-aos='fade-right'>{resumeData?.bio}</Text>
@@ -24,6 +24,7 @@ function About({resumeData}) {
               inline: "nearest"
             })
         }}>{resumeData?.contactmessage}</ContactBtn>
+
 
     </Container>
   )
@@ -49,13 +50,31 @@ const Container = styled.div`
 
 `
 
+const HelloSpan = styled.span`
+
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  cursor: pointer;
+  font-size: calc(15px + 1vw);
+    /* background-color: aliceblue; */
+  animation: hand 1.2s linear normal;
+/* animation-duration: 1s; */
+  animation-play-state: paused;
+  transform-origin: center;
+
+  &:hover{
+  animation-play-state: running;
+  }
+
+`
+
 
 const Head = styled.div`
   font-size: 20px;
   color: white;
   z-index: 1;
   position: relative;
-
   
   @media (min-width: 768px)
   {
@@ -63,9 +82,6 @@ const Head = styled.div`
     font-size: 1.7vw;
   }
 
-  span{
-    font-size: calc(15px + 1vw);
-  }
 
 `
 
@@ -84,28 +100,28 @@ const Name = styled.div`
 
 const ContactBtn = styled.div`
     
+    position: relative;
     color: white;
     width: 18vw;
     min-width: 200px;
     padding: 10px 20px;
+    transition: all 0.2s ease-in-out;
     text-align: center;
     background-color: var(--text-color);
     margin-top: 30px;
     cursor: pointer;
-    transition: all 0.25s ease;
-    position: relative;
     left: 10px;
     z-index: 3;
     font-size: 16px;
+    &:hover{
+        filter: brightness(80%);
+    }
 
     @media (min-width: 768px)
     {
       font-size: 1.4vw;
     }
 
-    &:hover{
-        filter: brightness(80%);
-    }
 
 
 `
