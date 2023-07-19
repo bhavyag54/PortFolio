@@ -83,13 +83,13 @@ code{
 
 :root{
 
-  /* --text-color: rgb(202, 135, 27); */
-  --text-color: #009076;
+  --text-color: #00ad8d;
   --acsent: rgb(10,10,10);
+  /* --acsent: #01241d; */
   --name-color: rgb(200, 200, 200);
   --text-hover: #00e3b9;
   --acsent2: rgb(200,200,200);
   --bg-green: #009076;
-  --pj-back: rgb(20,20,20);
+  --pj-back: rgb(21, 21, 21);
 
 }

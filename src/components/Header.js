@@ -109,7 +109,7 @@ function Header() {
                 </Nav>
 
                 <Resume>
-                    <a href="https://drive.google.com/file/d/1bDpTEYE-Hy-JdCOJgYxfcnm5bmLuEnLz/view?usp=share_link" target="_blank">Resume</a>
+                    <a href="https://drive.google.com/file/d/1YTc40QbaA9VvzUd_fVJeFTJTmJniHcYl/view?usp=sharing" target="_blank">Resume</a>
                 </Resume>
 
             </Container>
