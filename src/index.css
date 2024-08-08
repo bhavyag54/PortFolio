@@ -70,26 +70,26 @@ code{
 
 /* --text-color: rgb(32, 177, 169); */
 
-/* :root {
-  --text-color: rgb(202, 135, 27);
-  /* --acsent: rgb(10,10,10);
+:root {
+  --text-color: rgb(245, 177, 69);
+  --acsent: rgb(10,10,10);
   --name-color: rgb(200, 200, 200);
-  --text-hover: rgb(224, 155, 42);
+  --text-hover: rgb(245, 170, 48);
   --acsent2: rgb(200,200,200);
-  --bg-green: #009076;
-  --pj-back: rgb(20,20,20); */
-/* } */
+  --bg-green: rgba(245, 170, 48, 0.2);
+  --pj-back: rgba(20, 20, 20,1);
+} 
 
 
-:root{
+/** :root{
 
   --text-color: #00ad8d;
   --acsent: rgb(10,10,10);
-  /* --acsent: #01241d; */
+  --acsent: #01241d; 
   --name-color: rgb(200, 200, 200);
   --text-hover: #00e3b9;
   --acsent2: rgb(200,200,200);
   --bg-green: #009076;
   --pj-back: rgb(21, 21, 21);
 
-}
+}  */

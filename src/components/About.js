@@ -128,7 +128,7 @@ const ContactBtn = styled.div`
 
 const Text = styled.div`
   color: var(--name-color);
-  font-size: 20px;
+  font-size: 16px;
   position: relative;
   margin-top: 10px;
   text-align: center;
@@ -137,7 +137,7 @@ const Text = styled.div`
   @media (min-width: 768px)
   {
     width: 60%;
-    font-size: 2vw;
+    font-size: 1.5vw;
     // margin-left: 3px;
   }
 `
