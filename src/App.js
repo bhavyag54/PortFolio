@@ -5,7 +5,7 @@ import SideEmail from "./components/SideEmail";
 import SideLinks from "./components/SideLinks";
 import AOS from 'aos'
 import {LoadingScreen} from "./components/loading";
-import { DNA, Triangle } from "react-loader-spinner";
+import { Triangle } from "react-loader-spinner";
 
 function App() {
 
@@ -14,25 +14,27 @@ function App() {
 
   useEffect(() => {
 
-    window.addEventListener("load", () => {
-      AOS.init({});
-      fetch("/resumeData.json")
-      .then(res => res.json())
-      .then(data => {
-        setResumeData(data);
-        
-        setLoading(false);
-        // Refresh AOS after the loading screen is hidden
+    const handleLoad = async () => {
+      setLoading(true)
+      AOS.init({})
+      try {
+        const data = await fetch("/resumeData.json")
+        const res = await data.json()
+        setResumeData(res)
+      } catch (error) {
+        console.error("Failed to load resume data:", error);
+      } finally {
+        setLoading(false)
         setTimeout(() => {
-          AOS.refresh();
-        }, 5000); // Wait for the fade-out animation to complete
-      })
-    });
-
-    return () => {
-      window.removeEventListener("load", AOS.refresh)
+          AOS.refresh()
+        }, 2000)
+      }
     }
 
+    window.addEventListener("load", handleLoad)
+    return () => {
+      window.removeEventListener("load", handleLoad)
+    }
   }, [])
 
   
